@@ -1,0 +1,61 @@
+body {
+    background-color: rgb(6, 6, 63);
+    color: white;
+}
+.heading h1 {
+    margin-top: 20px;
+    margin-left: -20px;
+}
+  .navbar-brand {
+    color: white !important;
+  }
+  .navbar {
+    background-color: black !important;
+  }
+.collapse {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  
+  .form-label {
+    margin-right: 100px;
+  }
+  
+  .heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-brand img {
+      height: 30px;
+    }
+    .heading h1 {
+      font-size: 24px;
+    }
+    .heading h4 {
+      font-size: 18px;
+    }
+    .form-label {
+      display: block;
+      width: 100%;
+    }
+    table {
+      font-size: 14px;
+    }
+    .btn {
+      font-size: 12px;
+      padding: 5px 10px;
+    }
+  }
+  .mb-3 .btn-success {
+    background-color: rgb(5, 5, 179);
+  }
+  .mb-3 .btn-danger {
+    background-color: rgb(255, 11, 11);
+  }
+  .table {
+    color: white;
+  }
