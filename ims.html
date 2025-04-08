@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inventory Management System</title>
     <link
@@ -20,6 +21,11 @@
           <button
             class="navbar-toggler"
             type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -43,17 +49,19 @@
                     <label class="form-label">
                       Product Name:
                       <input
-                        id="product_name"
+                        id="current_order_product_name"
                         class="form-control"
                         type="text"
+                        required
                       />
                     </label>
                     <label class="form-label">
                       Product Brand:
                       <input
-                        id="product_brand"
+                        id="current_order_product_brand"
                         class="form-control"
                         type="text"
+                        required
                       />
                     </label>
                   </div>
@@ -61,23 +69,26 @@
                     <label class="form-label">
                       Quantity:
                       <input
-                        id="product_quantity"
+                        id="current_order_product_quantity"
                         class="form-control"
                         type="number"
+                        required
                       />
                     </label>
                     <label class="form-label">
-                      Price:
+                      Product Price:
                       <input
-                        id="price"
+                        id="current_order_product_price"
                         class="form-control"
                         type="number"
+                        required
                       />
                     </label>
                   </div>
                   <div class="mb-3">
                     <button
                       class="btn btn-success"
+                      onclick="addCurrentInventory()"
                       type="button"
                     >
                       Add
@@ -95,33 +106,40 @@
                     <th>Price</th>
                   </tr>
                 </thead>
-                <tbody id="Inventory list">
-                  <tr>
-                    <td>Milk</td>
-                    <td>Bear brand choco</td>
-                    <td>10</td>
-                    <td>1$</td>
-                    <td><button class="btn btn-success" 
-                      type="button">Edit</button></td>
-                    <td><button class="btn btn-danger" 
-                      type="button">Cancel</button></td>
-                  </tr>
-                  <tr>
-                    <td>Salt</td>
-                    <td>MSG</td>
-                    <td>5</td>
-                    <td>2$</td>
-                    <td><button class="btn btn-success" 
-                      type="button">Edit</button></td>
-                    <td><button class="btn btn-danger" 
-                      type="button">Cancel</button></td>
-                  </tr>
+                <tbody id="current_inventory_list">
                 </tbody>
               </table>
+                
+              <div class="modal fade" id="editModal" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Edit Inventory</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                      <input type="text" id="edit_product_name" class="form-control mb-2" placeholder="Product Name">
+                      <input type="text" id="edit_product_brand" class="form-control mb-2" placeholder="Brand">
+                      <input type="number" id="edit_product_quantity" class="form-control mb-2" placeholder="Quantity">
+                      <input type="number" id="edit_product_price" class="form-control mb-2" placeholder="Price">
+                      <input type="hidden" id="editing_row_index">
+                    </div>
+                    <div class="modal-footer">
+                      <button onclick="saveEdit()" class="btn btn-success">Save</button>
+                      <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"    
+    ></script>
+    <script src="main.js"></script>
   </body>
 </html>
