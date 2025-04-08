@@ -1,6 +1,6 @@
 body {
-    background-color: rgb(6, 6, 63);
-    color: white;
+  background-color: rgb(6, 6, 63);
+  color: white;
 }
 .heading h1 {
     margin-top: 20px;
@@ -10,7 +10,7 @@ body {
     color: white !important;
   }
   .navbar {
-    background-color: black !important;
+    background-color: #000000 !important;
   }
 .collapse {
     display: flex;
@@ -50,12 +50,15 @@ body {
       padding: 5px 10px;
     }
   }
-  .mb-3 .btn-success {
-    background-color: rgb(5, 5, 179);
+  .btn-success {
+    background-color: navy;
   }
-  .mb-3 .btn-danger {
-    background-color: rgb(255, 11, 11);
+  .btn-danger {
+    background-color: maroon;
   }
   .table {
     color: white;
+  }
+  .modal-content{
+    background-color: black;
   }
